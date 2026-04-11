@@ -1,0 +1,53 @@
+/**
+ * Defines contextual modifiers.
+ */
+export const Context = Object.freeze({
+
+	/**
+	 * A danger.
+	 */
+	Danger: "Danger",
+
+	/**
+	 * A warning.
+	 */
+	Warning: "Warning",
+
+	/**
+	 * An information.
+	 */
+	Info: "Info",
+
+	/**
+	 * A success.
+	 */
+	Success: "Success"
+});
+
+/**
+ * Defines contextual modifiers.
+ */
+export type Context = typeof Context[keyof typeof Context];
+
+/**
+ * Returns the CSS class of the specified context.
+ * @param context The context.
+ * @returns The CSS class of the specified context.
+ */
+export function cssClass(context: Context): string {
+	return context.toLowerCase();
+}
+
+/**
+ * Gets the icon corresponding to the specified context.
+ * @param context The context.
+ * @returns The icon corresponding to the specified context.
+ */
+export function icon(context: Context): string {
+	switch (context) {
+		case Context.Danger: return "error";
+		case Context.Success: return "check_circle";
+		case Context.Warning: return "warning";
+		default: return "info";
+	}
+}
