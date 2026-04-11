@@ -12,7 +12,7 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
-		<PackageTags>belin;core;framework;library</PackageTags>
+		<PackageTags>belin;blazor;components;html;library;ui</PackageTags>
 		<RepositoryUrl>https://github.com/cedx/ui.git</RepositoryUrl>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
