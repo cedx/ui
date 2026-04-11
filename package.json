@@ -1,0 +1,58 @@
+{
+	"author": "Cédric Belin <cedx@outlook.com>",
+	"bugs": "https://github.com/cedx/ui/issues",
+	"description": "Component library by Cédric Belin, full stack developer.",
+	"homepage": "https://github.com/cedx/ui",
+	"license": "MIT",
+	"name": "@cedx/ui",
+	"repository": "cedx/ui",
+	"type": "module",
+	"version": "0.1.0",
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@types/bootstrap": "^5.2.10",
+		"@types/chai": "^5.2.3",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "^25.6.0",
+		"@types/serve-handler": "^6.1.4",
+		"bootstrap": "^5.3.8",
+		"chai": "^6.2.2",
+		"esbuild": "^0.28.0",
+		"globals": "^17.4.0",
+		"htmx.org": "^2.0.8",
+		"mocha": "^11.7.5",
+		"playwright": "^1.59.1",
+		"playwright-chromium": "^1.59.1",
+		"serve-handler": "^6.1.7",
+		"typescript": "^6.0.2",
+		"typescript-eslint": "^8.58.1"
+	},
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"exports": {
+		"./*.js": {
+			"types": "./lib/*.d.ts",
+			"default": "./lib/*.js"
+		}
+	},
+	"files": [
+		"lib/",
+		"src/Client/"
+	],
+	"keywords": [
+		"belin",
+		"blazor",
+		"components",
+		"html",
+		"library",
+		"ui"
+	],
+	"peerDependencies": {
+		"bootstrap": ">=5.3.0",
+		"htmx.org": ">=2.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
