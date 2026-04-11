@@ -1,4 +1,4 @@
-namespace Belin.UI.UI;
+namespace Belin.UI;
 
 /// <summary>
 /// Specifies common return values of a dialog box.

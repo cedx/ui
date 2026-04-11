@@ -1,4 +1,4 @@
-namespace Belin.UI.UI;
+namespace Belin.UI;
 
 using System.Text.Json.Serialization;
 

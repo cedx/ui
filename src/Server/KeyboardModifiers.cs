@@ -1,4 +1,4 @@
-namespace Belin.UI.UI;
+namespace Belin.UI;
 
 /// <summary>
 /// Enumerates modifier flags for keyboard accelerators.
