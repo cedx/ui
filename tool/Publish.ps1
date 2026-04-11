@@ -9,7 +9,7 @@ else {
 }
 
 "Publishing the package..."
-$version = (Import-PowerShellDataFile Base.psd1).ModuleVersion
+$version = (Import-PowerShellDataFile UI.psd1).ModuleVersion
 git tag "v$version"
 git push origin "v$version"
 npm login
