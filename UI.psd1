@@ -14,7 +14,15 @@
 	VariablesToExport = @()
 
 	FunctionsToExport = @(
-		# TODO
+		"New-ActionBar"
+		"New-Alert"
+		"New-BackButton"
+	)
+
+	NestedModules = @(
+		"src/Console/New-ActionBar.psm1"
+		"src/Console/New-Alert.psm1"
+		"src/Console/New-BackButton.psm1"
 	)
 
 	RequiredModules = @(

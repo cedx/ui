@@ -10,7 +10,6 @@ using module ../Context.psm1
 	The rendered alert.
 #>
 function New-Alert {
-	[Alias("alert")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (

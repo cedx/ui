@@ -7,7 +7,6 @@
 	The rendered action bar.
 #>
 function New-ActionBar {
-	[Alias("action-bar")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
