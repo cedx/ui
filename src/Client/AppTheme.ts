@@ -1,0 +1,51 @@
+/**
+ * Enumerates different themes an operating system or application can show.
+ */
+export const AppTheme = Object.freeze({
+
+	/**
+	 * The system theme.
+	 */
+	System: "System",
+
+	/**
+	 * The light theme.
+	 */
+	Light: "Light",
+
+	/**
+	 * The dark theme.
+	 */
+	Dark: "Dark"
+});
+
+/**
+ * Enumerates different themes an operating system or application can show.
+ */
+export type AppTheme = typeof AppTheme[keyof typeof AppTheme];
+
+/**
+ * Gets the icon corresponding to the specified theme.
+ * @param theme The application theme.
+ * @returns The icon corresponding to the specified theme.
+ */
+export function icon(theme: AppTheme): string {
+	switch (theme) {
+		case AppTheme.Dark: return "dark_mode";
+		case AppTheme.Light: return "light_mode";
+		default: return "contrast";
+	}
+}
+
+/**
+ * Gets the label corresponding to the specified theme.
+ * @param theme The application theme.
+ * @returns The label corresponding to the specified theme.
+ */
+export function label(theme: AppTheme): string {
+	switch (theme) {
+		case AppTheme.Dark: return "Sombre";
+		case AppTheme.Light: return "Clair";
+		default: return "Auto";
+	}
+}
