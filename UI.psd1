@@ -18,6 +18,8 @@
 		"New-Alert"
 		"New-BackButton"
 		"New-FullScreenToggler"
+		"New-KeyboardAccelerator"
+		"New-LoadingIndicator"
 	)
 
 	NestedModules = @(
@@ -25,6 +27,8 @@
 		"src/Console/New-Alert.psm1"
 		"src/Console/New-BackButton.psm1"
 		"src/Console/New-FullScreenToggler.psm1"
+		"src/Console/New-KeyboardAccelerator.psm1"
+		"src/Console/New-LoadingIndicator.psm1"
 	)
 
 	RequiredModules = @(
