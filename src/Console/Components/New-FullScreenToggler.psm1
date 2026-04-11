@@ -15,10 +15,12 @@ function New-FullScreenToggler {
 		[object] $Content,
 
 		# The CSS selector used to target the element.
+		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateNotNullOrWhiteSpace()]
 		[string] $Target = "body",
 
 		# Value indicating whether to prevent the device screen from dimming or locking when in full-screen mode.
+		[Parameter(ValueFromPipelineByPropertyName)]
 		[switch] $WakeLock
 	)
 

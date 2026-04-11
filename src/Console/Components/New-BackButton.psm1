@@ -15,6 +15,7 @@ function New-ActionBar {
 		[object] $Content,
 
 		# The number of pages to go back.
+		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateRange("NonNegative")]
 		[int] $Steps = 1
 	)

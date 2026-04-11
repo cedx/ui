@@ -17,12 +17,14 @@
 		"New-ActionBar"
 		"New-Alert"
 		"New-BackButton"
+		"New-FullScreenToggler"
 	)
 
 	NestedModules = @(
 		"src/Console/New-ActionBar.psm1"
 		"src/Console/New-Alert.psm1"
 		"src/Console/New-BackButton.psm1"
+		"src/Console/New-FullScreenToggler.psm1"
 	)
 
 	RequiredModules = @(
