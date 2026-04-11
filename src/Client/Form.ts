@@ -13,8 +13,8 @@ export type FormControl = HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement
  * @param form The form element.
  * @returns The controls belonging to the specified form.
  */
-export function getFormControls(form: HTMLFormElement): FormControl[] {
-	return Array.from(form.elements).filter(isFormControl);
+export function getControls(form: HTMLFormElement): FormControl[] {
+	return Array.from(form.elements).filter(isControl);
 }
 
 /**
@@ -31,7 +31,7 @@ export function invalidControl(form: HTMLFormElement): FormControl|null {
  * @param element The element to check.
  * @returns `true` if the specified element is a form control, otherwise `false`.
  */
-export function isFormControl(element: Element): element is FormControl {
+export function isControl(element: Element): element is FormControl {
 	return element instanceof HTMLInputElement || element instanceof HTMLSelectElement || element instanceof HTMLTextAreaElement;
 }
 
@@ -40,8 +40,8 @@ export function isFormControl(element: Element): element is FormControl {
  * @param element The element to process.
  */
 export function resetValidity(element: Element): void {
-	if (element instanceof HTMLFormElement) getFormControls(element).forEach(control => control.setCustomValidity(""));
-	else if (isFormControl(element)) element.setCustomValidity("");
+	if (element instanceof HTMLFormElement) getControls(element).forEach(control => control.setCustomValidity(""));
+	else if (isControl(element)) element.setCustomValidity("");
 }
 
 /**
@@ -49,7 +49,7 @@ export function resetValidity(element: Element): void {
  * @param element The element to process.
  */
 export function trimControl(element: Element): void {
-	if (element instanceof HTMLFormElement) getFormControls(element).forEach(trimControl);
+	if (element instanceof HTMLFormElement) getControls(element).forEach(trimControl);
 	else if (element instanceof HTMLInputElement && !nonTextualTypes.has(element.type)) element.value = element.value.trim();
 	else if (element instanceof HTMLTextAreaElement) element.value = element.value.trim();
 }

@@ -1,4 +1,4 @@
-import {css, html} from "@cedx/ui/UI/Tag.js";
+import {css, html} from "@cedx/ui/Tags.js";
 import {assert} from "chai";
 
 /**

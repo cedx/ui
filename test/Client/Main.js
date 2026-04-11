@@ -1,3 +1,3 @@
-import "./Files.Tests.js";
-import "./Forms.Tests.js";
+import "./File.Tests.js";
+import "./Form.Tests.js";
 import "./Tags.Tests.js";

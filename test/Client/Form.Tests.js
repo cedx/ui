@@ -1,4 +1,4 @@
-import {invalidControl, isFormControl, resetValidity, trimControl} from "@cedx/ui/UI/Form.js";
+import {invalidControl, isControl, resetValidity, trimControl} from "@cedx/ui/Form.js";
 import {assert} from "chai";
 
 /**
@@ -29,17 +29,17 @@ describe("Form", () => {
 		});
 	});
 
-	describe("isFormControl()", () => {
+	describe("isControl()", () => {
 		it("should return `true` if the specified element is a form control", () => {
-			assert.isTrue(isFormControl(document.createElement("input")));
-			assert.isTrue(isFormControl(document.createElement("select")));
-			assert.isTrue(isFormControl(document.createElement("textarea")));
+			assert.isTrue(isControl(document.createElement("input")));
+			assert.isTrue(isControl(document.createElement("select")));
+			assert.isTrue(isControl(document.createElement("textarea")));
 		});
 
 		it("should return `false` if the specified element is a not form control", () => {
-			assert.isFalse(isFormControl(document.createElement("button")));
-			assert.isFalse(isFormControl(document.createElement("div")));
-			assert.isFalse(isFormControl(document.createElement("fieldset")));
+			assert.isFalse(isControl(document.createElement("button")));
+			assert.isFalse(isControl(document.createElement("div")));
+			assert.isFalse(isControl(document.createElement("fieldset")));
 		});
 	});
 
