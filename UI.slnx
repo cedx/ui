@@ -1,0 +1,6 @@
+<Solution>
+	<Project Path="src/Server/UI.csproj" />
+	<Project Path="test/Server/UI.Tests.csproj">
+		<Build Solution="Release|*" Project="false" />
+	</Project>
+</Solution>
