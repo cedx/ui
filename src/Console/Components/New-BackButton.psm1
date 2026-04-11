@@ -20,6 +20,7 @@ function New-ActionBar {
 	)
 
 	process {
-		tag back-button -attributes @{ steps = $Steps } -on @{ Click = "this.goBack(event)" } $Content
+		$attributes = @{ steps = $Steps }
+		tag back-button -attributes $attributes -on @{ Click = "this.goBack(event)" } $Content
 	}
 }
