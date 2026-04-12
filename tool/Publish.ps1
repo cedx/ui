@@ -18,3 +18,14 @@ npm publish
 $output = "var/NuGet"
 dotnet pack --output $output
 Get-Item "$output/*.nupkg" | ForEach-Object { dotnet nuget push $_ --api-key $Env:NUGET_API_KEY --source NuGet }
+
+$output = "var/PSModule"
+New-Item $output/src/Console -ItemType Directory | Out-Null
+Copy-Item UI.psd1 $output/Belin.UI.psd1
+Copy-Item *.md $output
+Copy-Item src/Console/* $output/src/Console -Recurse
+
+$output = "var/PSGallery"
+New-Item $output -ItemType Directory | Out-Null
+Compress-PSResource var/PSModule $output
+Get-Item "$output/*.nupkg" | ForEach-Object { Publish-PSResource -ApiKey $Env:PSGALLERY_API_KEY -NupkgPath $_ -Repository PSGallery }
