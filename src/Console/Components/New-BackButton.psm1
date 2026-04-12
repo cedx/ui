@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-	Renders an back button.
+	Renders a back button.
 .INPUTS
 	The child content.
 .OUTPUTS

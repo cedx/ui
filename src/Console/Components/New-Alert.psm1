@@ -1,4 +1,3 @@
-using namespace System.Collections.Generic
 using module ../Context.psm1
 
 <#
@@ -40,12 +39,7 @@ function New-Alert {
 	)
 
 	process {
-		$cssClass = [List[string]] "alert", "alert-$(Get-ContextCssClass $Context)"
-		if ($Dismissible) { $cssClass.Add("alert-dismissible") }
-		if ($Fade) { $cssClass.Add("fade"); $cssClass.Add("show") }
-		$cssClass.AddRange($Class)
-
-		div -class $cssClass {
+		div -class "alert alert-dismissible", $Dismissible ? "alert-dismissible" : "", $Fade ? "fade show" : "", $Class -join " " {
 			div -class d-flex, align-items-center {
 				i -class icon, flex-shrink-0, me-2 ($Icon ? $Icon : (Get-ContextIcon $Context))
 				div $Content

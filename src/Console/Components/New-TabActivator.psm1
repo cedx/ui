@@ -28,6 +28,6 @@ function New-TabActivator {
 
 	process {
 		$attributes = @{ storageArea = $StorageArea; storageKey = $StorageKey }
-		tag tab-activator -attributes $attributes -class $cssClass $Content
+		tag tab-activator -attributes $attributes $Content
 	}
 }

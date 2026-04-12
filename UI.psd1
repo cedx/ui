@@ -23,6 +23,7 @@
 		"New-MenuActivator"
 		"New-OfflineIndicator"
 		"New-TabActivator"
+		"New-ThemeDropdown"
 	)
 
 	NestedModules = @(
@@ -35,6 +36,7 @@
 		"src/Console/New-MenuActivator.psm1"
 		"src/Console/New-OfflineIndicator.psm1"
 		"src/Console/New-TabActivator.psm1"
+		"src/Console/New-ThemeDropdown.psm1"
 	)
 
 	RequiredModules = @(
