@@ -1,14 +1,12 @@
-using namespace System.Collections.Generic
-
 <#
 .SYNOPSIS
-	Renders a loading indicator.
+	Renders a offline indicator.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered loading indicator.
+	The rendered offline indicator.
 #>
-function New-LoadingIndicator {
+function New-OfflineIndicator {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
@@ -31,6 +29,6 @@ function New-LoadingIndicator {
 
 		# TODO Check if $Fade/$Open must be unwrapped (i.e. $WakeLock.IsPresent, also inside "Belin.Html" library?).
 		$attributes = @{ fade = $Fade; open = $Open }
-		tag loading-indicator -attributes $attributes -class $cssClass $Content
+		tag offline-indicator -attributes $attributes -class $cssClass $Content
 	}
 }

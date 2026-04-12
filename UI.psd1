@@ -21,6 +21,7 @@
 		"New-KeyboardAccelerator"
 		"New-LoadingIndicator"
 		"New-MenuActivator"
+		"New-OfflineIndicator"
 	)
 
 	NestedModules = @(
@@ -31,6 +32,7 @@
 		"src/Console/New-KeyboardAccelerator.psm1"
 		"src/Console/New-LoadingIndicator.psm1"
 		"src/Console/New-MenuActivator.psm1"
+		"src/Console/New-OfflineIndicator.psm1"
 	)
 
 	RequiredModules = @(
