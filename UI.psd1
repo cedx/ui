@@ -28,17 +28,17 @@
 	)
 
 	NestedModules = @(
-		"src/Console/New-ActionBar.psm1"
-		"src/Console/New-Alert.psm1"
-		"src/Console/New-BackButton.psm1"
-		"src/Console/New-FullScreenToggler.psm1"
-		"src/Console/New-KeyboardAccelerator.psm1"
-		"src/Console/New-LoadingIndicator.psm1"
-		"src/Console/New-MenuActivator.psm1"
-		"src/Console/New-OfflineIndicator.psm1"
-		"src/Console/New-TabActivator.psm1"
-		"src/Console/New-ThemeDropdown.psm1"
-		"src/Console/New-TypeAhead.psm1"
+		"src/Console/Components/New-ActionBar.psm1"
+		"src/Console/Components/New-Alert.psm1"
+		"src/Console/Components/New-BackButton.psm1"
+		"src/Console/Components/New-FullScreenToggler.psm1"
+		"src/Console/Components/New-KeyboardAccelerator.psm1"
+		"src/Console/Components/New-LoadingIndicator.psm1"
+		"src/Console/Components/New-MenuActivator.psm1"
+		"src/Console/Components/New-OfflineIndicator.psm1"
+		"src/Console/Components/New-TabActivator.psm1"
+		"src/Console/Components/New-ThemeDropdown.psm1"
+		"src/Console/Components/New-TypeAhead.psm1"
 	)
 
 	RequiredModules = @(
