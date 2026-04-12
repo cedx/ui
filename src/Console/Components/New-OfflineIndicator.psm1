@@ -26,7 +26,7 @@ function New-OfflineIndicator {
 	process {
 		# TODO Check if $Fade/$Open must be unwrapped (i.e. $WakeLock.IsPresent, also inside "Belin.Html" library?).
 		$attributes = @{ fade = $Fade; open = $Open }
-		$cssClass = $Fade ? "fade" : "", $Open ? "show" : "hide"
+		$cssClass = ($Fade ? "fade" : ""), ($Open ? "show" : "hide")
 		tag offline-indicator -attributes $attributes -class $cssClass $Content
 	}
 }
