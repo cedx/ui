@@ -1,4 +1,4 @@
-using namespace System.Collections.Generic
+﻿using namespace System.Collections.Generic
 using module ../Alignment.psm1
 using module ../AppTheme.psm1
 

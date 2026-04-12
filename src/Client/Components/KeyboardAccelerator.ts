@@ -37,7 +37,7 @@ export class KeyboardAccelerator extends HTMLElement {
 	 */
 	get modifiers(): number {
 		return (this.getAttribute("modifiers") ?? "").split(",")
-			.map(value => value.trim()) // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-arguments
+			.map(value => value.trim())
 			.reduce<number>((modifiers, value) => modifiers | (KeyboardAccelerator.#modifiers.get(value) ?? 0), KeyboardModifiers.None);
 	}
 	set modifiers(value: number) {
