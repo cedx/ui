@@ -6,21 +6,7 @@ defaults:
     shell: pwsh
 
 jobs:
-  client:
-    runs-on: windows-latest
-    steps:
-      - name: Fetch sources
-        uses: actions/checkout@v6
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
-        with:
-          cache: npm
-          node-version: latest
-      - name: Install dependencies
-        run: npm ci
-      - name: Run tests
-        run: ./Invoke.ps1 Client/Test
-  server:
+  test:
     runs-on: windows-latest
     steps:
       - name: Fetch sources
@@ -29,5 +15,17 @@ jobs:
         uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 10
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: npm
+          node-version: latest
+      - name: Set up PowerShell
+        run: |
+          Invoke-WebRequest "https://aka.ms/install-powershell.ps1" -OutFile Install-PowerShell.ps1
+          ./Install-PowerShell.ps1
+          Add-Content $Env:GITHUB_PATH "$Env:LOCALAPPDATA\Microsoft\powershell"
+      - name: Install dependencies
+        run: ./Invoke.ps1 Install
       - name: Run tests
-        run: ./Invoke.ps1 Server/Test
+        run: ./Invoke.ps1 Test
