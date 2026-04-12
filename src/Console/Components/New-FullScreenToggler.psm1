@@ -25,8 +25,7 @@ function New-FullScreenToggler {
 	)
 
 	process {
-		# TODO Check if $WakeLock must be unwrapped (i.e. $WakeLock.IsPresent, also inside "Belin.Html" library?).
-		$attributes = @{ target = $Target; wakeLock = $WakeLock }
+		$attributes = @{ target = $Target; wakeLock = $WakeLock.IsPresent }
 		tag fullscreen-toggler -attributes $attributes -on @{ Click = "this.toggleFullScreen(event)" } $Content
 	}
 }

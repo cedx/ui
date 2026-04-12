@@ -24,8 +24,7 @@ function New-LoadingIndicator {
 	)
 
 	process {
-		# TODO Check if $Fade/$Open must be unwrapped (i.e. $WakeLock.IsPresent, also inside "Belin.Html" library?).
-		$attributes = @{ fade = $Fade; open = $Open }
+		$attributes = @{ fade = $Fade.IsPresent ; open = $Open.IsPresent }
 		$cssClass = ($Fade ? "fade" : ""), ($Open ? "show" : "hide")
 		tag loading-indicator -attributes $attributes -class $cssClass $Content
 	}

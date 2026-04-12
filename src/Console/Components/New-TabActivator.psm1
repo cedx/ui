@@ -23,7 +23,7 @@ function New-TabActivator {
 		# The key of the storage entry providing the active tab index.
 		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateNotNullOrWhiteSpace()]
-		[switch] $StorageKey = "ActiveTabIndex"
+		[string] $StorageKey = "ActiveTabIndex"
 	)
 
 	process {
