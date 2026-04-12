@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-	Renders a fullscreen toggler.
+	A component for toggling an element to full-screen.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered fullscreen toggler.
+	The rendered component.
 #>
 function New-FullScreenToggler {
 	[CmdletBinding()]

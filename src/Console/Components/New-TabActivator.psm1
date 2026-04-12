@@ -2,11 +2,11 @@ using module ../StorageArea.psm1
 
 <#
 .SYNOPSIS
-	Renders a tab activator.
+	A component that activates a tab, based on its index saved in the web storage.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered tab activator.
+	The rendered component.
 #>
 function New-TabActivator {
 	[CmdletBinding()]

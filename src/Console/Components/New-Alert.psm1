@@ -2,11 +2,11 @@ using module ../Context.psm1
 
 <#
 .SYNOPSIS
-	Renders an alert.
+	TODO Renders an alert.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered alert.
+	The rendered component.
 #>
 function New-Alert {
 	[CmdletBinding()]

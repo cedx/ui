@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-	Renders a back button.
+	A component that moves back in the session history when clicked.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered back button.
+	The rendered component.
 #>
 function New-ActionBar {
 	[CmdletBinding()]

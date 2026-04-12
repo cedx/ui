@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-	Renders a loading indicator.
+	A component that shows up when an HTTP request starts, and hides when all concurrent HTTP requests are completed.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered loading indicator.
+	The rendered component.
 #>
 function New-LoadingIndicator {
 	[CmdletBinding()]

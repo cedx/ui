@@ -2,11 +2,11 @@ using module ../KeyboardModifiers.psm1
 
 <#
 .SYNOPSIS
-	Renders a keyboard accelerator.
+	Associates a shortcut key with its child content.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered keyboard accelerator.
+	The rendered component.
 #>
 function New-KeyboardAccelerator {
 	[CmdletBinding()]

@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-	Renders a menu activator.
+	A component that activates the items of a menu, based on the current document URL.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered menu activator.
+	The rendered component.
 #>
 function New-MenuActivator {
 	[CmdletBinding()]

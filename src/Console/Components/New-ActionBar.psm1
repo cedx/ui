@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-	Renders an action bar.
+	TODO Renders an action bar.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered action bar.
+	The rendered component.
 #>
 function New-ActionBar {
 	[CmdletBinding()]

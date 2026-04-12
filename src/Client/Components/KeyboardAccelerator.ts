@@ -1,7 +1,7 @@
 import {KeyboardModifiers} from "../KeyboardModifiers.js";
 
 /**
- * Represents a shortcut key associated with an element.
+ * Associates a shortcut key with its child content.
  */
 export class KeyboardAccelerator extends HTMLElement {
 

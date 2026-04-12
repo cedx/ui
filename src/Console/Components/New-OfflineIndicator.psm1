@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-	Renders a offline indicator.
+	A component that shows up when the network is unavailable, and hides when connectivity is restored.
 .INPUTS
 	The child content.
 .OUTPUTS
-	The rendered offline indicator.
+	The rendered component.
 #>
 function New-OfflineIndicator {
 	[CmdletBinding()]
