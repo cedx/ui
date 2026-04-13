@@ -45,7 +45,7 @@ function New-ThemeDropdown {
 		$attributes = @{
 			alignment = $Alignment
 			appTheme = $AppTheme
-			cookie = $Cookie.IsPresent
+			cookie = $Cookie
 			cookieDomain = $CookieDomain
 			label = $Label
 			storageKey = $StorageKey

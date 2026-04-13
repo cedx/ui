@@ -24,7 +24,7 @@ function New-LoadingIndicator {
 	)
 
 	process {
-		$attributes = @{ fade = $Fade.IsPresent ; open = $Open.IsPresent }
+		$attributes = @{ fade = $Fade ; open = $Open }
 		$cssClass = ($Fade ? "fade" : ""), ($Open ? "show" : "hide")
 		tag loading-indicator -attributes $attributes -class $cssClass $Content
 	}
