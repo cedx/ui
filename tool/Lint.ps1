@@ -1,5 +1,6 @@
-"Performing the static analysis of source code..."
 Import-Module PSScriptAnalyzer
+
+"Performing the static analysis of source code..."
 $PSScriptRoot, "src", "test" | Invoke-ScriptAnalyzer -ExcludeRule PSAvoidUsingPositionalParameters, PSUseShouldProcessForStateChangingFunctions -Recurse
 Test-ModuleManifest UI.psd1 | Out-Null
 
