@@ -1,8 +1,4 @@
-if ($Release) {
-	& "$PSScriptRoot/Clean.ps1"
-	& "$PSScriptRoot/Version.ps1"
-	& "$PSScriptRoot/Client/Build.ps1"
-}
+if ($Release) { & "$PSScriptRoot/Default.ps1" }
 else {
 	"The ""-Release"" switch must be set!"
 	exit 1
@@ -16,7 +12,7 @@ npm login
 npm publish
 
 $output = "var/NuGet"
-dotnet pack --output $output
+dotnet pack --no-build --output $output
 Get-Item "$output/*.nupkg" | ForEach-Object { dotnet nuget push $_ --api-key $Env:NUGET_API_KEY --source NuGet }
 
 $output = "var/PSModule"
