@@ -10,7 +10,7 @@ export class ThemeDropdown extends HTMLElement {
 	/**
 	 * The list of observed attributes.
 	 */
-	static readonly observedAttributes = ["alignment", "apptheme", "label"];
+	static readonly observedAttributes = ["alignment", "apptheme", "text"];
 
 	/**
 	 * The abort controller used to remove the event listeners.
@@ -85,17 +85,6 @@ export class ThemeDropdown extends HTMLElement {
 	}
 
 	/**
-	 * The label of the dropdown menu.
-	 */
-	get label(): string {
-		const value = this.getAttribute("label") ?? "";
-		return value.trim() || "Thème";
-	}
-	set label(value: string) {
-		this.setAttribute("label", value);
-	}
-
-	/**
 	 * The key of the storage entry providing the saved application theme.
 	 */
 	get storageKey(): string {
@@ -104,6 +93,17 @@ export class ThemeDropdown extends HTMLElement {
 	}
 	set storageKey(value: string) {
 		this.setAttribute("storagekey", value);
+	}
+
+	/**
+	 * The text of the dropdown menu.
+	 */
+	get text(): string {
+		const value = this.getAttribute("text") ?? "";
+		return value.trim() || "Thème";
+	}
+	set text(value: string) {
+		this.setAttribute("text", value);
 	}
 
 	/**
@@ -116,7 +116,7 @@ export class ThemeDropdown extends HTMLElement {
 		if (newValue != oldValue) switch (attribute) {
 			case "alignment": this.#updateAlignment(Object.values(Alignment).includes(newValue as Alignment) ? newValue as Alignment : Alignment.End); break;
 			case "apptheme": this.#updateAppTheme(Object.values(AppTheme).includes(newValue as AppTheme) ? newValue as AppTheme : AppTheme.System); break;
-			case "label": this.#updateLabel(newValue ?? ""); break;
+			case "text": this.#updateText(newValue ?? ""); break;
 			// No default
 		}
 	}
@@ -213,10 +213,10 @@ export class ThemeDropdown extends HTMLElement {
 	}
 
 	/**
-	 * Updates the label of the dropdown menu.
+	 * Updates the text of the dropdown menu.
 	 * @param value The new value.
 	 */
-	#updateLabel(value: string): void {
+	#updateText(value: string): void {
 		this.querySelector(".dropdown-toggle > span")!.textContent = value.trim() || "Thème";
 	}
 }

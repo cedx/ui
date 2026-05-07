@@ -2,22 +2,28 @@ using module ./Variant.psm1
 
 <#
 .SYNOPSIS
-	Gets the CSS class corresponding to the specified variant.
+	Gets a custom property of the specified variant.
 .INPUTS
 	The variant.
 .OUTPUTS
-	The CSS class corresponding to the specified variant.
+	The custom property of the specified variant.
 #>
-function Get-UIVariantCssClass {
+function Get-UIVariant {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
 		# The variant.
 		[Parameter(Mandatory, Position = 0, ValueFromPipeline)]
-		[Variant] $Variant
+		[Variant] $Variant,
+
+		# Value indicating whether to return the corresponding CSS class.
+		[Parameter(ParameterSetName = "CssClass")]
+		[switch] $CssClass
 	)
 
 	process {
-		$Variant.ToString().ToLowerInvariant()
+		if ($CssClass) {
+			return $Variant.ToString().ToLowerInvariant()
+		}
 	}
 }

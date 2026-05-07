@@ -40,9 +40,9 @@ function New-UIAlert {
 	)
 
 	process {
-		div -Class alert, "alert-$(Get-UIContextCssClass $Context)", ($Dismissible ? "alert-dismissible" : ""), ($Fade ? "fade show" : ""), ($Class -join " ") {
+		div -Class alert, "alert-$(Get-UIContext $Context -CssClass)", ($Dismissible ? "alert-dismissible" : ""), ($Fade ? "fade show" : ""), ($Class -join " ") {
 			div -Class d-flex, align-items-center {
-				i -Class icon, flex-shrink-0, me-2 ($Icon ? $Icon : (Get-UIContextIcon $Context))
+				i -Class icon, flex-shrink-0, me-2 ($Icon ? $Icon : (Get-UIContext $Context -Icon))
 				div $Content
 			}
 

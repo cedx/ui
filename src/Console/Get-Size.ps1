@@ -2,29 +2,35 @@ using module ./Size.psm1
 
 <#
 .SYNOPSIS
-	Gets the CSS class corresponding to the specified size.
+	Gets a custom property of the specified size.
 .INPUTS
 	The size.
 .OUTPUTS
-	The CSS class corresponding to the specified size.
+	The custom property of the specified size.
 #>
-function Get-UISizeCssClass {
+function Get-UISize {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
 		# The size.
-		[Parameter(Mandatory, Size = 0, ValueFromPipeline)]
-		[Size] $Size
+		[Parameter(Mandatory, Position = 0, ValueFromPipeline)]
+		[Size] $Size,
+
+		# Value indicating whether to return the corresponding CSS class.
+		[Parameter(ParameterSetName = "CssClass")]
+		[switch] $CssClass
 	)
 
 	process {
-		switch ($Size) {
-			([Size]::ExtraSmall) { return "xs"; break }
-			([Size]::Small) { return "sm"; break }
-			([Size]::Large) { return "lg"; break }
-			([Size]::ExtraLarge) { return "xl"; break }
-			([Size]::ExtraExtraLarge) { return "xxl"; break }
-			default { return "md" }
+		if ($CssClass) {
+			switch ($Size) {
+				([Size]::ExtraSmall) { return "xs" }
+				([Size]::Small) { return "sm" }
+				([Size]::Large) { return "lg" }
+				([Size]::ExtraLarge) { return "xl" }
+				([Size]::ExtraExtraLarge) { return "xxl" }
+				default { return "md" }
+			}
 		}
 	}
 }

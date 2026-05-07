@@ -15,10 +15,10 @@ function New-UIThemeDropdown {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
-		# The label of the dropdown menu.
+		# The text of the dropdown menu.
 		[Parameter(Position = 0, ValueFromPipelineByPropertyName)]
 		[ValidateNotNullOrWhiteSpace()]
-		[string] $Label = "Thème",
+		[string] $Text = "Thème",
 
 		# The alignment of the dropdown menu.
 		[Parameter(ValueFromPipelineByPropertyName)]
@@ -48,8 +48,8 @@ function New-UIThemeDropdown {
 			appTheme = $AppTheme
 			cookie = $Cookie
 			cookieDomain = $CookieDomain
-			label = $Label
 			storageKey = $StorageKey
+			text = $Text
 		}
 
 		tag theme-dropdown -Attributes $attributes {

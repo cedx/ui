@@ -27,13 +27,11 @@
 	)
 
 	FunctionsToExport = @(
-		"Get-UIAppThemeIcon"
-		"Get-UIAppThemeLabel"
-		"Get-UIContextCssClass"
-		"Get-UIContextIcon"
-		"Get-UIPositionCssClass"
-		"Get-UISizeCssClass"
-		"Get-UIVariantCssClass"
+		"Get-UIAppTheme"
+		"Get-UIContext"
+		"Get-UIPosition"
+		"Get-UISize"
+		"Get-UIVariant"
 		"New-UIActionBar"
 		"New-UIAlert"
 		"New-UIBackButton"

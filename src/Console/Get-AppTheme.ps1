@@ -2,52 +2,44 @@ using module ./AppTheme.psm1
 
 <#
 .SYNOPSIS
-	Gets the icon corresponding to the specified theme.
+	Gets a custom property of the specified theme.
 .INPUTS
 	The application theme.
 .OUTPUTS
-	The icon corresponding to the specified theme.
+	The custom property of the specified theme.
 #>
-function Get-UIAppThemeIcon {
+function Get-UIAppTheme {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
 		# The application theme.
 		[Parameter(Mandatory, Position = 0, ValueFromPipeline)]
-		[AppTheme] $AppTheme
+		[AppTheme] $AppTheme,
+
+		# Value indicating whether to return the corresponding icon name.
+		[Parameter(ParameterSetName = "Icon")]
+		[switch] $Icon,
+
+		# Value indicating whether to return the corresponding text.
+		[Parameter(ParameterSetName = "Text")]
+		[switch] $Text
 	)
 
 	process {
-		switch ($AppTheme) {
-			([AppTheme]::Dark) { return "dark_mode"; break }
-			([AppTheme]::Light) { return "light_mode"; break }
-			default { return "contrast" }
+		if ($Icon) {
+			switch ($AppTheme) {
+				([AppTheme]::Dark) { return "dark_mode" }
+				([AppTheme]::Light) { return "light_mode" }
+				default { return "contrast" }
+			}
 		}
-	}
-}
 
-<#
-.SYNOPSIS
-	Gets the label corresponding to the specified theme.
-.INPUTS
-	The application theme.
-.OUTPUTS
-	The label corresponding to the specified theme.
-#>
-function Get-UIAppThemeLabel {
-	[CmdletBinding()]
-	[OutputType([string])]
-	param (
-		# The application theme.
-		[Parameter(Mandatory, Position = 0, ValueFromPipeline)]
-		[AppTheme] $AppTheme
-	)
-
-	process {
-		switch ($AppTheme) {
-			([AppTheme]::Dark) { return "Sombre"; break }
-			([AppTheme]::Light) { return "Clair"; break }
-			default { return "Auto" }
+		if ($Text) {
+			switch ($AppTheme) {
+				([AppTheme]::Dark) { return "Sombre" }
+				([AppTheme]::Light) { return "Clair" }
+				default { return "Auto" }
+			}
 		}
 	}
 }

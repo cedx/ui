@@ -1,16 +1,16 @@
 @namespace Belin.UI.Components
 
-<theme-dropdown alignment="@Alignment" appTheme="@AppTheme" cookie="@Cookie" cookieDomain="@CookieDomain" label="@Label" storageKey="@StorageKey">
+<theme-dropdown alignment="@Alignment" appTheme="@AppTheme" cookie="@Cookie" cookieDomain="@CookieDomain" storageKey="@StorageKey" text="@Text">
 	<li class="nav-item dropdown">
 		<button class="dropdown-toggle nav-link" data-bs-toggle="dropdown" type="button">
 			<i class="icon icon-fill">@AppTheme.Icon</i>
-			<span class="mx-1">@Label</span>
+			<span class="mx-1">@Text</span>
 		</button>
 		<ul class="dropdown-menu @(Alignment == Alignment.End ? "dropdown-menu-end" : "")">
 			@foreach (var theme in Enum.GetValues<AppTheme>()) {
 				<li>
 					<button class="dropdown-item d-flex align-items-center justify-content-between" type="button" value="@theme">
-						<span><i class="icon icon-fill me-1">@theme.Icon</i> @theme.Label</span>
+						<span><i class="icon icon-fill me-1">@theme.Icon</i> @theme.Text</span>
 						@if (theme == AppTheme) { <i class="icon ms-3">check</i> }
 					</button>
 				</li>
@@ -45,14 +45,14 @@
 	public string CookieDomain { get; set; } = "";
 
 	/// <summary>
-	/// The label of the dropdown menu.
-	/// </summary>
-	[Parameter]
-	public string Label { get; set => field = value.Trim(); } = "Thème";
-
-	/// <summary>
 	/// The key of the storage entry providing the saved application theme.
 	/// </summary>
 	[Parameter]
 	public string StorageKey { get; set => field = value.Trim(); } = "AppTheme";
+
+	/// <summary>
+	/// The text of the dropdown menu.
+	/// </summary>
+	[Parameter]
+	public string Text { get; set => field = value.Trim(); } = "Thème";
 }

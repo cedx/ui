@@ -34,18 +34,18 @@ public static class AppThemeExtensions {
 		/// The icon corresponding to this theme.
 		/// </summary>
 		public string Icon => appTheme switch {
-			AppTheme.System => "contrast",
+			AppTheme.Dark => "dark_mode",
 			AppTheme.Light => "light_mode",
-			AppTheme.Dark => "dark_mode"
+			AppTheme.System => "contrast"
 		};
 
 		/// <summary>
-		/// The label corresponding to this theme.
+		/// The text corresponding to this theme.
 		/// </summary>
-		public string Label => appTheme switch {
-			AppTheme.System => "Auto",
+		public string Text => appTheme switch {
+			AppTheme.Dark => "Sombre",
 			AppTheme.Light => "Clair",
-			AppTheme.Dark => "Sombre"
+			AppTheme.System => "Auto"
 		};
 	}
 }
