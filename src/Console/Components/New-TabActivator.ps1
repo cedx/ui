@@ -9,6 +9,7 @@ using module ../StorageArea.psm1
 	The rendered component.
 #>
 function New-UITabActivator {
+	[Alias("uiTabActivator")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (

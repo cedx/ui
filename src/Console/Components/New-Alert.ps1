@@ -9,6 +9,7 @@ using module ../Context.psm1
 	The rendered component.
 #>
 function New-UIAlert {
+	[Alias("uiAlert")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (

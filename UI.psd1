@@ -9,9 +9,22 @@
 	Description = "Component library by Cédric Belin, full stack developer."
 	GUID = "13e38ea8-3ddf-4d0d-8440-eeb8d0e8f9fa"
 
-	AliasesToExport = @()
 	CmdletsToExport = @()
 	VariablesToExport = @()
+
+	AliasesToExport = @(
+		"uiActionBar"
+		"uiAlert"
+		"uiBackButton"
+		"uiFullScreenToggler"
+		"uiKeyboardAccelerator"
+		"uiLoadingIndicator"
+		"uiMenuActivator"
+		"uiOfflineIndicator"
+		"uiTabActivator"
+		"uiThemeDropdown"
+		"uiTypeAhead"
+	)
 
 	FunctionsToExport = @(
 		"Get-UIAppThemeIcon"

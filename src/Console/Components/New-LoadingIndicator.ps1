@@ -7,6 +7,7 @@
 	The rendered component.
 #>
 function New-UILoadingIndicator {
+	[Alias("uiLoadingIndicator")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (

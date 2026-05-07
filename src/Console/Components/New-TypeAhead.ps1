@@ -6,7 +6,8 @@
 .OUTPUTS
 	The rendered component.
 #>
-function New-UIActionBar {
+function New-UITypeAhead {
+	[Alias("uiTypeAhead")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (

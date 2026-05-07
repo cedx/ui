@@ -7,6 +7,7 @@
 	The rendered component.
 #>
 function New-UIFullScreenToggler {
+	[Alias("uiFullScreenToggler")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (

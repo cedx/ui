@@ -6,7 +6,8 @@
 .OUTPUTS
 	The rendered component.
 #>
-function New-UIActionBar {
+function New-UIBackButton {
+	[Alias("uiBackButton")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (

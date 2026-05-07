@@ -7,6 +7,7 @@
 	The rendered component.
 #>
 function New-UIActionBar {
+	[Alias("uiActionBar")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (

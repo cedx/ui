@@ -11,6 +11,7 @@ using module ../AppTheme.psm1
 	The rendered component.
 #>
 function New-UIThemeDropdown {
+	[Alias("uiThemeDropdown")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (

@@ -9,6 +9,7 @@ using module ../KeyboardModifiers.psm1
 	The rendered component.
 #>
 function New-UIKeyboardAccelerator {
+	[Alias("uiKeyboardAccelerator")]
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
