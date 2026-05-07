@@ -1,5 +1,6 @@
-"Building the solution..."
-dotnet build --configuration ($Release ? "Release" : "Debug")
+using module ./Cmdlets.psm1
 
-$options = $Release ? @() : @("--sourceMap")
-npx tsc --build src/Client/tsconfig.json @options
+"Building the solution..."
+$sourceMap = -not $Release
+Build-DotNetSolution ($Release ? "Release" : "Debug")
+Invoke-TypeScript "$PSScriptRoot/../src/Client/tsconfig.json" -SourceMap:$sourceMap

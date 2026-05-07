@@ -1,8 +1,9 @@
 using module PSScriptAnalyzer
+using module ./Cmdlets.psm1
 
 "Performing the static analysis of source code..."
-$PSScriptRoot, "src", "test" | Invoke-ScriptAnalyzer -ExcludeRule PSAvoidUsingPositionalParameters, PSUseShouldProcessForStateChangingFunctions -Recurse
+$PSScriptRoot, "src", "test" | Invoke-ScriptAnalyzer -ExcludeRule PSUseShouldProcessForStateChangingFunctions -Recurse
 Test-ModuleManifest UI.psd1 | Out-Null
 
-npx tsc --build src/Client/tsconfig.json --noEmit
-npx eslint --cache --cache-location var --config etc/ESLint.js src/Client test/Client
+Invoke-TypeScript "$PSScriptRoot/../src/Client/tsconfig.json" -NoEmit
+Invoke-ESLint "$PSScriptRoot/../src/Client", "$PSScriptRoot/../test/Client" -Configuration "$PSScriptRoot/../etc/ESLint.js"

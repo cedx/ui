@@ -10,23 +10,23 @@ Describe "New-Alert" {
 	}
 
 	It 'should handle the "Context" parameter' {
-		$alert = New-UIAlert -context danger
+		$alert = New-UIAlert -Context danger
 		$alert | Should -BeLikeExactly "*alert-danger*"
 		$alert | Should -BeLikeExactly "*<i*>error</i>*"
 	}
 
 	It 'should handle the "Dismissible" parameter' {
-		$alert = New-UIAlert -dismissible
+		$alert = New-UIAlert -Dismissible
 		$alert | Should -BeLikeExactly "*alert-dismissible*"
 		$alert | Should -BeLikeExactly '*data-bs-dismiss="alert"*'
 	}
 
 	It 'should handle the "Fade" parameter' {
-		New-UIAlert -fade | Should -BeLikeExactly "*fade show*"
+		New-UIAlert -Fade | Should -BeLikeExactly "*fade show*"
 	}
 
 	It 'should handle the "Icon" parameter' {
-		New-UIAlert -icon heart | Should -BeLikeExactly "*<i*>heart</i>*"
+		New-UIAlert -Icon heart | Should -BeLikeExactly "*<i*>heart</i>*"
 	}
 
 	It "should handle the inner content" {
