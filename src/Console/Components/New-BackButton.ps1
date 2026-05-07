@@ -6,7 +6,7 @@
 .OUTPUTS
 	The rendered component.
 #>
-function New-ActionBar {
+function New-UIActionBar {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
@@ -22,6 +22,6 @@ function New-ActionBar {
 
 	process {
 		$attributes = @{ steps = $Steps }
-		tag back-button -attributes $attributes -on @{ Click = "this.goBack(event)" } $Content
+		tag back-button -Attributes $attributes -On @{ Click = "this.goBack(event)" } $Content
 	}
 }

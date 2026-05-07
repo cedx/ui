@@ -6,7 +6,7 @@
 .OUTPUTS
 	The rendered component.
 #>
-function New-ActionBar {
+function New-UIActionBar {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
@@ -27,6 +27,6 @@ function New-ActionBar {
 
 	process {
 		$attributes = @{ delay = $Delay; list = $List; minLength = $MinLength }
-		tag type-ahead -attributes $attributes { datalist -id $List }
+		tag type-ahead -Attributes $attributes { datalist -Id $List }
 	}
 }

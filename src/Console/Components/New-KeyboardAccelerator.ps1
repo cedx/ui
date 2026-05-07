@@ -8,7 +8,7 @@ using module ../KeyboardModifiers.psm1
 .OUTPUTS
 	The rendered component.
 #>
-function New-KeyboardAccelerator {
+function New-UIKeyboardAccelerator {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
@@ -27,6 +27,6 @@ function New-KeyboardAccelerator {
 
 	process {
 		$attributes = @{ key = $Key; modifiers = $Modifiers }
-		tag keyboard-accelerator -attributes $attributes $Content
+		tag keyboard-accelerator -Attributes $attributes $Content
 	}
 }

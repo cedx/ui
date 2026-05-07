@@ -1,7 +1,7 @@
 ﻿@{
-	DefaultCommandPrefix = "UI"
-	ModuleVersion = "0.1.1"
+	ModuleVersion = "0.2.0"
 	PowerShellVersion = "7.6"
+	RootModule = "src/Main.psm1"
 
 	Author = "Cédric Belin <cedx@outlook.com>"
 	CompanyName = "Cedric-Belin.fr"
@@ -14,31 +14,24 @@
 	VariablesToExport = @()
 
 	FunctionsToExport = @(
-		"New-ActionBar"
-		"New-Alert"
-		"New-BackButton"
-		"New-FullScreenToggler"
-		"New-KeyboardAccelerator"
-		"New-LoadingIndicator"
-		"New-MenuActivator"
-		"New-OfflineIndicator"
-		"New-TabActivator"
-		"New-ThemeDropdown"
-		"New-TypeAhead"
-	)
-
-	NestedModules = @(
-		"src/Console/Components/New-ActionBar.psm1"
-		"src/Console/Components/New-Alert.psm1"
-		"src/Console/Components/New-BackButton.psm1"
-		"src/Console/Components/New-FullScreenToggler.psm1"
-		"src/Console/Components/New-KeyboardAccelerator.psm1"
-		"src/Console/Components/New-LoadingIndicator.psm1"
-		"src/Console/Components/New-MenuActivator.psm1"
-		"src/Console/Components/New-OfflineIndicator.psm1"
-		"src/Console/Components/New-TabActivator.psm1"
-		"src/Console/Components/New-ThemeDropdown.psm1"
-		"src/Console/Components/New-TypeAhead.psm1"
+		"Get-UIAppThemeIcon"
+		"Get-UIAppThemeLabel"
+		"Get-UIContextCssClass"
+		"Get-UIContextIcon"
+		"Get-UIPositionCssClass"
+		"Get-UISizeCssClass"
+		"Get-UIVariantCssClass"
+		"New-UIActionBar"
+		"New-UIAlert"
+		"New-UIBackButton"
+		"New-UIFullScreenToggler"
+		"New-UIKeyboardAccelerator"
+		"New-UILoadingIndicator"
+		"New-UIMenuActivator"
+		"New-UIOfflineIndicator"
+		"New-UITabActivator"
+		"New-UIThemeDropdown"
+		"New-UITypeAhead"
 	)
 
 	RequiredModules = @(

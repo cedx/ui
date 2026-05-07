@@ -1,12 +1,12 @@
 <#
 .SYNOPSIS
-	A component that shows up when the network is unavailable, and hides when connectivity is restored.
+	A component that shows up when an HTTP request starts, and hides when all concurrent HTTP requests are completed.
 .INPUTS
 	The child content.
 .OUTPUTS
 	The rendered component.
 #>
-function New-OfflineIndicator {
+function New-UILoadingIndicator {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
@@ -26,6 +26,6 @@ function New-OfflineIndicator {
 	process {
 		$attributes = @{ fade = $Fade ; open = $Open }
 		$cssClass = ($Fade ? "fade" : ""), ($Open ? "show" : "hide")
-		tag offline-indicator -attributes $attributes -class $cssClass $Content
+		tag loading-indicator -Attributes $attributes -Class $cssClass $Content
 	}
 }

@@ -43,5 +43,5 @@ Install-PSResource Belin.UI -Repository PSGallery
 Now in your [PowerShell](https://learn.microsoft.com/en-us/powershell) code, you can use:
 
 ```powershell
-Import-Module Belin.UI
+using module Belin.UI
 ```

@@ -1,14 +1,12 @@
+using module ../../../UI.psd1
+
 <#
 .SYNOPSIS
 	Tests the features of the `New-Alert` cmdlet.
 #>
 Describe "New-Alert" {
-	BeforeAll {
-		Import-Module "$PSScriptRoot/../../../UI.psd1"
-	}
-
 	It 'should handle the "Class" parameter' {
-		New-UIAlert -class mb-0, rounded-0 | Should -BeLikeExactly "*mb-0 rounded-0*"
+		New-UIAlert -Class mb-0, rounded-0 | Should -BeLikeExactly "*mb-0 rounded-0*"
 	}
 
 	It 'should handle the "Context" parameter' {
@@ -32,6 +30,6 @@ Describe "New-Alert" {
 	}
 
 	It "should handle the inner content" {
-		New-UIAlert { input -type text } | Should -BeLikeExactly '*<input type="text">*'
+		New-UIAlert { input -Type text } | Should -BeLikeExactly '*<input type="text">*'
 	}
 }

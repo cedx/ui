@@ -1,12 +1,12 @@
 <#
 .SYNOPSIS
-	A component that activates the items of a menu, based on the current document URL.
+	Renders an action bar.
 .INPUTS
 	The child content.
 .OUTPUTS
 	The rendered component.
 #>
-function New-MenuActivator {
+function New-UIActionBar {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
@@ -16,6 +16,6 @@ function New-MenuActivator {
 	)
 
 	process {
-		tag menu-activator $Content
+		tag action-bar $Content
 	}
 }

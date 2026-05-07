@@ -10,7 +10,7 @@ using module ../AppTheme.psm1
 .OUTPUTS
 	The rendered component.
 #>
-function New-ThemeDropdown {
+function New-UIThemeDropdown {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
@@ -51,21 +51,21 @@ function New-ThemeDropdown {
 			storageKey = $StorageKey
 		}
 
-		tag theme-dropdown -attributes $attributes {
-			li -class nav-item, dropdown {
-				button -class dropdown-toggle, nav-link -dataset @{ BsToggle = "dropdown" } -type button {
-					i -class icon, icon-fill (Get-AppThemeIcon $AppTheme)
-					span -class mx-1 $Label
+		tag theme-dropdown -Attributes $attributes {
+			li -Class nav-item, dropdown {
+				button -Class dropdown-toggle, nav-link -DataSet @{ BsToggle = "dropdown" } -Type button {
+					i -Class icon, icon-fill (Get-AppThemeIcon $AppTheme)
+					span -Class mx-1 $Label
 				}
-				ul -class dropdown-menu, $Alignment -eq [Alignment]::End ? "dropdown-menu-end" : "" {
+				ul -Class dropdown-menu, ($Alignment -eq [Alignment]::End ? "dropdown-menu-end" : "") {
 					foreach ($theme in [Enum]::GetValues[AppTheme]()) {
 						li {
-							button -class dropdown-item, d-flex, align-items-center, justify-content-between -type button -value $theme {
+							button -Class dropdown-item, d-flex, align-items-center, justify-content-between -Type button -Value $theme {
 								span {
-									i -class icon, icon-fill, me-1 (Get-AppThemeIcon $theme)
+									i -Class icon, icon-fill, me-1 (Get-AppThemeIcon $theme)
 									Get-AppThemeLabel $theme
 								}
-								if ($theme -eq $AppTheme) { i -class icon, ms-3 "check" }
+								if ($theme -eq $AppTheme) { i -Class icon, ms-3 "check" }
 							}
 						}
 					}

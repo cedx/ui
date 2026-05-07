@@ -2,13 +2,13 @@ using module ../Context.psm1
 
 <#
 .SYNOPSIS
-	TODO Renders an alert.
+	Renders an alert.
 .INPUTS
 	The child content.
 .OUTPUTS
 	The rendered component.
 #>
-function New-Alert {
+function New-UIAlert {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
@@ -39,14 +39,14 @@ function New-Alert {
 	)
 
 	process {
-		div -class alert, "alert-$(Get-ContextCssClass $Context)", ($Dismissible ? "alert-dismissible" : ""), ($Fade ? "fade show" : ""), ($Class -join " ") {
-			div -class d-flex, align-items-center {
-				i -class icon, flex-shrink-0, me-2 ($Icon ? $Icon : (Get-ContextIcon $Context))
+		div -Class alert, "alert-$(Get-ContextCssClass $Context)", ($Dismissible ? "alert-dismissible" : ""), ($Fade ? "fade show" : ""), ($Class -join " ") {
+			div -Class d-flex, align-items-center {
+				i -Class icon, flex-shrink-0, me-2 ($Icon ? $Icon : (Get-ContextIcon $Context))
 				div $Content
 			}
 
 			if ($Dismissible) {
-				button -class btn-close -dataset @{ BsDismiss = "alert" } -type button
+				button -Class btn-close -DataSet @{ BsDismiss = "alert" } -Type button
 			}
 		}
 	}

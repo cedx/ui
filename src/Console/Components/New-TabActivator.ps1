@@ -8,7 +8,7 @@ using module ../StorageArea.psm1
 .OUTPUTS
 	The rendered component.
 #>
-function New-TabActivator {
+function New-UITabActivator {
 	[CmdletBinding()]
 	[OutputType([string])]
 	param (
@@ -28,6 +28,6 @@ function New-TabActivator {
 
 	process {
 		$attributes = @{ storageArea = $StorageArea; storageKey = $StorageKey }
-		tag tab-activator -attributes $attributes $Content
+		tag tab-activator -Attributes $attributes $Content
 	}
 }
