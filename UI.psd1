@@ -56,7 +56,7 @@
 			LicenseUri = "https://github.com/cedx/ui/blob/main/License.md"
 			ProjectUri = "https://github.com/cedx/ui"
 			ReleaseNotes = "https://github.com/cedx/ui/releases"
-			Tags = "belin", "blazor", "components", "html", "library", "ui"
+			Tags = "belin", "components", "html", "library", "ui"
 		}
 	}
 }

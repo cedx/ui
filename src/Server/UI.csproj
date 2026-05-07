@@ -4,7 +4,7 @@
 		<Copyright>© Cédric Belin</Copyright>
 		<Description>Component library by Cédric Belin, full stack developer.</Description>
 		<Product>Belin UI</Product>
-		<Version>0.1.1</Version>
+		<Version>0.2.0</Version>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -12,7 +12,7 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
-		<PackageTags>belin;blazor;components;html;library;ui</PackageTags>
+		<PackageTags>belin;components;html;library;ui</PackageTags>
 		<RepositoryUrl>https://github.com/cedx/ui.git</RepositoryUrl>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>

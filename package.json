@@ -7,7 +7,7 @@
 	"name": "@cedx/ui",
 	"repository": "cedx/ui",
 	"type": "module",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@types/bootstrap": "^5.2.10",
@@ -42,7 +42,6 @@
 	],
 	"keywords": [
 		"belin",
-		"blazor",
 		"components",
 		"html",
 		"library",
