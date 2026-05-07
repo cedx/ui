@@ -61,6 +61,15 @@ function Invoke-ESLint {
 
 <#
 .SYNOPSIS
+	Invokes the Node.js test runner.
+#>
+function Invoke-NodeTest {
+	npx esbuild --bundle --legal-comments=none --log-level=warning --outfile=var/Tests.js --sourcemap test/Client/Main.js
+	node test/Client/Playwright.js
+}
+
+<#
+.SYNOPSIS
 	Invokes the TypeScript compiler.
 #>
 function Invoke-TypeScript {
@@ -109,6 +118,14 @@ function New-GitTag {
 #>
 function Test-NpmPackageUpdate {
 	npm outdated
+}
+
+<#
+.SYNOPSIS
+	Checks whether an update is available for the NuGet packages.
+#>
+function Test-NuGetPackageUpdate {
+	dotnet package list --outdated
 }
 
 <#

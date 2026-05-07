@@ -1,7 +1,8 @@
+using module ./Cmdlets.psm1
+
 "Running the test suite..."
-npx tsc --build src/Client/tsconfig.json --sourceMap
-npx esbuild test/Client/Main.js --bundle --legal-comments=none --outfile=var/Tests.js --sourcemap
-node test/Client/Playwright.js
+Invoke-TypeScript "$PSScriptRoot/../src/Client/tsconfig.json" -SourceMap
+Invoke-NodeTest
 
 pwsh -Command {
 	Import-Module Pester
