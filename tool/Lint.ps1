@@ -5,5 +5,5 @@ using module ./Cmdlets.psm1
 $PSScriptRoot, "src", "test" | Invoke-ScriptAnalyzer -ExcludeRule PSAvoidUsingPositionalParameters, PSUseShouldProcessForStateChangingFunctions -Recurse
 Test-ModuleManifest UI.psd1 | Out-Null
 
-Invoke-TypeScript "$PSScriptRoot/../src/Client/tsconfig.json" -NoEmit
-Invoke-ESLint "$PSScriptRoot/../src/Client", "$PSScriptRoot/../test/Client" -Configuration "$PSScriptRoot/../etc/ESLint.js"
+Invoke-TypeScript src/Client/tsconfig.json -NoEmit
+Invoke-ESLint src/Client, test/Client -Configuration etc/ESLint.js

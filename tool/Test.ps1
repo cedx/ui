@@ -1,7 +1,7 @@
 using module ./Cmdlets.psm1
 
 "Running the test suite..."
-Invoke-TypeScript "$PSScriptRoot/../src/Client/tsconfig.json" -SourceMap
+Invoke-TypeScript src/Client/tsconfig.json -SourceMap
 Invoke-NodeTest
 
 pwsh -Command {
