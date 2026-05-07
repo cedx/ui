@@ -114,6 +114,15 @@ function New-GitTag {
 
 <#
 .SYNOPSIS
+	Publishes the project package to the NPM registry.
+#>
+function Publish-NpmPackage {
+	npm login
+	npm publish
+}
+
+<#
+.SYNOPSIS
 	Publishes the project package to the NuGet registry.
 #>
 function Publish-NuGetPackage {

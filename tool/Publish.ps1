@@ -9,5 +9,6 @@ else {
 "Publishing the package..."
 $version = (Import-PowerShellDataFile UI.psd1).ModuleVersion
 New-GitTag "v$version"
+Publish-NpmPackage
 Publish-NuGetPackage -NoBuild
 Publish-PSGalleryModule
