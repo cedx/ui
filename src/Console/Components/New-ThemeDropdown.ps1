@@ -55,16 +55,16 @@ function New-UIThemeDropdown {
 		tag theme-dropdown -Attributes $attributes {
 			li -Class nav-item, dropdown {
 				button -Class dropdown-toggle, nav-link -DataSet @{ BsToggle = "dropdown" } -Type button {
-					i -Class icon, icon-fill (Get-UIAppThemeIcon $AppTheme)
-					span -Class mx-1 $Label
+					i -Class icon, icon-fill (Get-UIAppTheme $AppTheme -Icon)
+					span -Class mx-1 $Text
 				}
 				ul -Class dropdown-menu, ($Alignment -eq [Alignment]::End ? "dropdown-menu-end" : "") {
 					foreach ($theme in [Enum]::GetValues[AppTheme]()) {
 						li {
 							button -Class dropdown-item, d-flex, align-items-center, justify-content-between -Type button -Value $theme {
 								span {
-									i -Class icon, icon-fill, me-1 (Get-UIAppThemeIcon $theme)
-									Get-UIAppThemeLabel $theme
+									i -Class icon, icon-fill, me-1 (Get-UIAppTheme $theme -Icon)
+									Get-UIAppTheme $theme -Text
 								}
 								if ($theme -eq $AppTheme) { i -Class icon, ms-3 "check" }
 							}

@@ -114,6 +114,42 @@ function New-GitTag {
 
 <#
 .SYNOPSIS
+	Publishes the project package to the NuGet registry.
+#>
+function Publish-NuGetPackage {
+	param (
+		# Value indicating whether to not build the solution before compression.
+		[switch] $NoBuild
+	)
+
+	$output = "$PSScriptRoot/../var/NuGet"
+	$argumentList = "--output", $output
+	if ($NoBuild) { $argumentList += "--no-build" }
+	dotnet pack @argumentList
+	foreach ($package in Get-Item $output/*.nupkg) { dotnet nuget push $package --api-key $Env:NUGET_API_KEY --source NuGet }
+}
+
+<#
+.SYNOPSIS
+	Publishes the project package to the PowerShell Gallery registry.
+#>
+function Publish-PSGalleryModule {
+	$root = Join-Path $PSScriptRoot .. -Resolve
+
+	$output = "$root/var/PSModule"
+	New-Item $output/src -ItemType Directory | Out-Null
+	Copy-Item $root/UI.psd1 $output/Belin.UI.psd1
+	Copy-Item $root/*.md $output
+	Copy-Item $root/src/Console $output/src -Recurse
+
+	$output = "$root/var/PSGallery"
+	New-Item $output -ItemType Directory | Out-Null
+	Compress-PSResource $root/var/PSModule $output
+	foreach ($package in Get-Item $output/*.nupkg) { Publish-PSResource -ApiKey $Env:PSGALLERY_API_KEY -NupkgPath $package -Repository PSGallery }
+}
+
+<#
+.SYNOPSIS
 	Checks whether an update is available for the NPM packages.
 #>
 function Test-NpmPackageUpdate {
