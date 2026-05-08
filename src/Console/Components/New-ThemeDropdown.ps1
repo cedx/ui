@@ -63,7 +63,7 @@ function New-UIThemeDropdown {
 						li {
 							button -Class dropdown-item, d-flex, align-items-center, justify-content-between -Type button -Value $theme {
 								span {
-									i -Class icon, icon-fill, me-1 (Get-UIAppTheme $theme -Icon)
+									i -Class icon, icon-fill, me-2 (Get-UIAppTheme $theme -Icon)
 									Get-UIAppTheme $theme -Text
 								}
 								if ($theme -eq $AppTheme) { i -Class icon, ms-3 "check" }
