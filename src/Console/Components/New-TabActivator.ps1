@@ -14,15 +14,13 @@ function New-UITabActivator {
 	[OutputType([string])]
 	param (
 		# The child content.
-		[Parameter(Position = 0, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+		[Parameter(Position = 0, ValueFromPipeline)]
 		[object] $Content,
 
 		# The storage area to use.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[StorageArea] $StorageArea = [StorageArea]::Session,
 
 		# The key of the storage entry providing the active tab index.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateNotNullOrWhiteSpace()]
 		[string] $StorageKey = "ActiveTabIndex"
 	)

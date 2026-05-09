@@ -12,15 +12,13 @@ function New-UILoadingIndicator {
 	[OutputType([string])]
 	param (
 		# The child content.
-		[Parameter(Position = 0, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+		[Parameter(Position = 0, ValueFromPipeline)]
 		[object] $Content,
 
 		# Value indicating whether to apply a transition.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[switch] $Fade,
 
 		# Value indicating whether to initially show this component.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[switch] $Open
 	)
 

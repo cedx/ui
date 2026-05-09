@@ -14,15 +14,14 @@ function New-UIKeyboardAccelerator {
 	[OutputType([string])]
 	param (
 		# The child content.
-		[Parameter(Position = 0, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+		[Parameter(Position = 0, ValueFromPipeline)]
 		[object] $Content,
 
 		# Identifies the key for the keyboard accelerator.
-		[Parameter(Mandatory, ValueFromPipelineByPropertyName)]
+		[Parameter(Mandatory)]
 		[string] $Key,
 
 		# Identifies the modifiers for the keyboard accelerator.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[KeyboardModifiers] $Modifiers = [KeyboardModifiers]::None
 	)
 

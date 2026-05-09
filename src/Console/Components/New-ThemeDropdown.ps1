@@ -16,28 +16,23 @@ function New-UIThemeDropdown {
 	[OutputType([string])]
 	param (
 		# The text of the dropdown menu.
-		[Parameter(Position = 0, ValueFromPipelineByPropertyName)]
+		[Parameter(Position = 0)]
 		[ValidateNotNullOrWhiteSpace()]
 		[string] $Text = "Thème",
 
 		# The alignment of the dropdown menu.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[Alignment] $Alignment = [Alignment]::End,
 
 		# The current application theme.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[AppTheme] $AppTheme = [AppTheme]::System,
 
 		# Value indicating whether to store the application theme in a cookie.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[switch] $Cookie,
 
 		# The URI for which the associated cookie is valid.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[string] $CookieDomain = "",
 
 		# The key of the storage entry providing the saved application theme.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateNotNullOrWhiteSpace()]
 		[string] $StorageKey = "AppTheme"
 	)

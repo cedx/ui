@@ -12,11 +12,10 @@ function New-UIBackButton {
 	[OutputType([string])]
 	param (
 		# The child content.
-		[Parameter(Position = 0, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+		[Parameter(Position = 0, ValueFromPipeline)]
 		[object] $Content,
 
 		# The number of pages to go back.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateRange("NonNegative")]
 		[int] $Steps = 1
 	)

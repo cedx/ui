@@ -12,16 +12,14 @@ function New-UIFullScreenToggler {
 	[OutputType([string])]
 	param (
 		# The child content.
-		[Parameter(Position = 0, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+		[Parameter(Position = 0, ValueFromPipeline)]
 		[object] $Content,
 
 		# The CSS selector used to target the element.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateNotNullOrWhiteSpace()]
 		[string] $Target = "body",
 
 		# Value indicating whether to prevent the device screen from dimming or locking when in full-screen mode.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[switch] $WakeLock
 	)
 

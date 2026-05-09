@@ -12,16 +12,14 @@ function New-UITypeAhead {
 	[OutputType([string])]
 	param (
 		# The data list identifier.
-		[Parameter(Mandatory, Position = 0, ValueFromPipelineByPropertyName)]
+		[Parameter(Mandatory, Position = 0)]
 		[string] $List,
 
 		# The delay in milliseconds to wait before triggering autocomplete suggestions.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateRange("NonNegative")]
 		[int] $Delay = 300,
 
 		# The minimum character length needed before triggering autocomplete suggestions.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateRange("Positive")]
 		[int] $MinLength = 2
 	)

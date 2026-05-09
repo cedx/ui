@@ -14,28 +14,23 @@ function New-UIAlert {
 	[OutputType([string])]
 	param (
 		# The child content.
-		[Parameter(Position = 0, ValueFromPipeline, ValueFromPipelineByPropertyName)]
+		[Parameter(Position = 0, ValueFromPipeline)]
 		[object] $Content,
 
 		# The CSS class names to apply to the underlying element.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[ValidateNotNull()]
 		[string[]] $Class = @(),
 
 		# A contextual modifier.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[Context] $Context = [Context]::Info,
 
 		# Value indicating whether this alert can be dismissed.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[switch] $Dismissible,
 
 		# Value indicating whether to apply a transition.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[switch] $Fade,
 
 		# The icon displayed next to the alert message.
-		[Parameter(ValueFromPipelineByPropertyName)]
 		[string] $Icon = ""
 	)
 
