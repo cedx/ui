@@ -24,6 +24,7 @@
 		"uiTabActivator"
 		"uiThemeDropdown"
 		"uiToast"
+		"uiToaster"
 		"uiTypeAhead"
 	)
 
@@ -44,6 +45,7 @@
 		"New-UITabActivator"
 		"New-UIThemeDropdown"
 		"New-UIToast"
+		"New-UIToaster"
 		"New-UITypeAhead"
 	)
 
