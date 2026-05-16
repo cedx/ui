@@ -42,11 +42,18 @@ function New-UIToaster {
 	)
 
 	process {
-		$attributes = @{ autoHide = $AutoHide; context = $Context; culture = $Culture; delay = $Delay; fade = $Fade; icon = $Icon; position = $Position }
-		$positionCssClass = Get-UIPosition $Position -CssClass
+		$attributes = @{
+			autoHide = $AutoHide
+			context = $Context
+			culture = $Culture
+			delay = $Delay
+			fade = $Fade
+			icon = $Icon
+			position = $Position
+		}
 
 		tag toaster-container -Attributes $attributes {
-			div -Class toast-container, p-3, $positionCssClass $Content
+			div -Class toast-container, p-3, (Get-UIPosition $Position -CssClass) $Content
 			template (New-UIToast)
 		}
 	}
