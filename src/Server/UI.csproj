@@ -13,7 +13,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 		<PackageTags>belin;components;html;library;ui</PackageTags>
-		<RepositoryUrl>https://github.com/cedx/ui.git</RepositoryUrl>
+		<RepositoryUrl>https://github.com/CedX/UI.git</RepositoryUrl>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
 

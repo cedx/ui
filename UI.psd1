@@ -51,9 +51,9 @@
 
 	PrivateData = @{
 		PSData = @{
-			LicenseUri = "https://github.com/cedx/ui/blob/main/License.md"
-			ProjectUri = "https://github.com/cedx/ui"
-			ReleaseNotes = "https://github.com/cedx/ui/releases"
+			LicenseUri = "https://github.com/CedX/UI/blob/main/License.md"
+			ProjectUri = "https://github.com/CedX/UI"
+			ReleaseNotes = "https://github.com/CedX/UI/releases"
 			Tags = "belin", "components", "html", "library", "ui"
 		}
 	}

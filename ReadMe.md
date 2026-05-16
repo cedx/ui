@@ -6,12 +6,12 @@ Component library by [Cédric Belin](https://cedric-belin.fr), full stack develo
 > **Use at your own risk!** No support will be provided.
 
 ## Documentation
-- [User guide](https://github.com/cedx/ui/tree/main/docs)
-- [Examples](https://github.com/cedx/ui/tree/main/example)
+- [User guide](https://github.com/CedX/UI/tree/main/docs)
+- [Examples](https://github.com/CedX/UI/tree/main/example)
 
 ## Development
-- [Git repository](https://github.com/cedx/ui)
-- [Submit an issue](https://github.com/cedx/ui/issues)
+- [Git repository](https://github.com/CedX/UI)
+- [Submit an issue](https://github.com/CedX/UI/issues)
 
 ## Licence
-[Belin UI](https://github.com/cedx/ui) is distributed under the MIT License.
+[Belin UI](https://github.com/CedX/UI) is distributed under the MIT License.
