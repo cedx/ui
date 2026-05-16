@@ -23,6 +23,7 @@
 		"uiOfflineIndicator"
 		"uiTabActivator"
 		"uiThemeDropdown"
+		"uiToast"
 		"uiTypeAhead"
 	)
 
@@ -42,6 +43,7 @@
 		"New-UIOfflineIndicator"
 		"New-UITabActivator"
 		"New-UIThemeDropdown"
+		"New-UIToast"
 		"New-UITypeAhead"
 	)
 
