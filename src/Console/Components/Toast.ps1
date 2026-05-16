@@ -51,7 +51,7 @@ function New-UIToast {
 			culture = $Culture
 			delay = $Delay
 			fade = $Fade
-			icon = $Icon
+			icon = $Icon ? $Icon : $null
 			open = $Open
 		}
 

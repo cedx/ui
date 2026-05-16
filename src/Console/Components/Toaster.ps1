@@ -48,7 +48,7 @@ function New-UIToaster {
 			culture = $Culture
 			delay = $Delay
 			fade = $Fade
-			icon = $Icon
+			icon = $Icon ? $Icon : $null
 			position = $Position
 		}
 
