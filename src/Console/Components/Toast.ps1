@@ -59,7 +59,7 @@ function New-UIToast {
 		tag toaster-item -Attributes $attributes {
 			div -Class toast -DataSet @{ BsAnimation = $Fade ? "true" : "false"; BsAutohide = $AutoHide ? "true" : "false"; BsDelay = $Delay } {
 				div -Class toast-header, "toast-header-$contextCssClass" {
-					i -Class icon, me-3, "text-$contextCssClass" ([string]::IsNullOrWhiteSpace($Icon) ? (Get-UIContext $Context -Icon) : $Icon)
+					i -Class icon, me-2, "text-$contextCssClass", transform-scale-110 ([string]::IsNullOrWhiteSpace($Icon) ? (Get-UIContext $Context -Icon) : $Icon)
 					b -Class me-auto $Caption
 					small -Class text-secondary # Toast.ElapsedTime
 					button -Class btn-close -DataSet @{ BsDismiss = "toast" } -Type button
