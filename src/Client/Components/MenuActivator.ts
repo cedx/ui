@@ -37,9 +37,9 @@ export class MenuActivator extends HTMLElement {
 	 */
 	#update(): void {
 		for (const element of this.querySelectorAll(".active")) element.classList.remove("active");
-		for (const element of this.querySelectorAll("a")) if (element.href == location.href) {
-			element.classList.add("active");
-			element.closest(".dropdown")?.querySelector(".dropdown-toggle")?.classList.add("active");
+		for (const anchor of this.querySelectorAll("a")) if (anchor.href == location.href) {
+			anchor.classList.add("active");
+			anchor.closest(".dropdown")?.querySelector(".dropdown-toggle")?.classList.add("active");
 		}
 	}
 }
