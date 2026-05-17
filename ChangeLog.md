@@ -1,8 +1,8 @@
 # Changelog
 
 ## Version [0.4.0](https://github.com/CedX/UI/compare/v0.3.0...v0.4.0)
-- Added the `New-UIToast` and `New-UIToaster` cmdlets.
-- Added the `uiToast` and `uiToaster` aliases.
+- Added the `New-UIDialogBox`, `New-UIToast` and `New-UIToaster` cmdlets.
+- Added the `uiDialogBox`, `uiToast` and `uiToaster` aliases.
 
 ## Version [0.3.0](https://github.com/CedX/UI/compare/v0.2.0...v0.3.0)
 - Removed the `ValueFromPipelineByPropertyName` attribute from all cmdlet parameters.
