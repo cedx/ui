@@ -51,7 +51,7 @@ function New-UIThemeDropdown {
 			li -Class nav-item, dropdown {
 				button -Class dropdown-toggle, nav-link -DataSet @{ BsToggle = "dropdown" } -Type button {
 					i -Class icon, icon-fill (Get-UIAppTheme $AppTheme -Icon)
-					span -Class mx-1 $Text
+					span -Class mx-2 $Text
 				}
 				ul -Class dropdown-menu, ($Alignment -eq [Alignment]::End ? "dropdown-menu-end" : "") {
 					foreach ($theme in [Enum]::GetValues[AppTheme]()) {
