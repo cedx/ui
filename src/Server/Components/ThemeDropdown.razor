@@ -4,7 +4,7 @@
 	<li class="nav-item dropdown">
 		<button class="dropdown-toggle nav-link" data-bs-toggle="dropdown" type="button">
 			<i class="icon icon-fill">@AppTheme.Icon</i>
-			<span class="mx-1">@Text</span>
+			<span class="ms-1">@Text</span>
 		</button>
 		<ul class="dropdown-menu @(Alignment == Alignment.End ? "dropdown-menu-end" : "")">
 			@foreach (var theme in Enum.GetValues<AppTheme>()) {
