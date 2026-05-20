@@ -3,4 +3,4 @@ using module ./Cmdlets.psm1
 "Building the solution..."
 $sourceMap = -not $Release
 Build-DotNetSolution ($Release ? "Release" : "Debug")
-Invoke-TypeScript src/Client/tsconfig.json -SourceMap:$sourceMap
+Invoke-TypeScript Sources/Client/tsconfig.json -SourceMap:$sourceMap

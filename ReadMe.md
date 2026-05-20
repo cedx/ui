@@ -6,8 +6,8 @@ Component library by [Cédric Belin](https://cedric-belin.fr), full stack develo
 > **Use at your own risk!** No support will be provided.
 
 ## Documentation
-- [User guide](https://github.com/CedX/UI/tree/main/docs)
-- [Examples](https://github.com/CedX/UI/tree/main/example)
+- [User guide](https://github.com/CedX/UI/tree/main/Documentation)
+- [Examples](https://github.com/CedX/UI/tree/main/Examples)
 
 ## Development
 - [Git repository](https://github.com/CedX/UI)

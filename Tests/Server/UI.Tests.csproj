@@ -12,7 +12,7 @@
 		<BaseOutputPath>obj</BaseOutputPath>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<OutDir>../../bin</OutDir>
+		<OutDir>../../Binaries</OutDir>
 		<RootNamespace>Belin.UI</RootNamespace>
 		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
 		<TargetFramework>net10.0</TargetFramework>
@@ -21,7 +21,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.*" />
 		<PackageReference Include="MSTest" Version="4.*" />
-		<ProjectReference Include="../../src/Server/UI.csproj" />
+		<ProjectReference Include="../../Sources/Server/UI.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

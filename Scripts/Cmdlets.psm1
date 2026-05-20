@@ -53,7 +53,7 @@ function Invoke-ESLint {
 		[string] $Configuration
 	)
 
-	$argumentList = "--cache", "--cache-location", "$PSScriptRoot/../var"
+	$argumentList = "--cache", "--cache-location", "$PSScriptRoot/../Temp"
 	if ($Configuration) { $argumentList += "--config", $Configuration }
 	$argumentList += $Path
 	npx eslint @argumentList
@@ -64,8 +64,8 @@ function Invoke-ESLint {
 	Invokes the Node.js test runner.
 #>
 function Invoke-NodeTest {
-	npx esbuild --bundle --legal-comments=none --log-level=warning --outfile=var/Tests.js --sourcemap test/Client/Main.js
-	node test/Client/Playwright.js
+	npx esbuild --bundle --legal-comments=none --log-level=warning --outfile=Temp/Tests.js --sourcemap Tests/Client/Main.js
+	node Tests/Client/Playwright.js
 }
 
 <#
@@ -131,7 +131,7 @@ function Publish-NuGetPackage {
 		[switch] $NoBuild
 	)
 
-	$output = "$PSScriptRoot/../var/NuGet"
+	$output = "$PSScriptRoot/../Temp/NuGet"
 	$argumentList = "--output", $output
 	if ($NoBuild) { $argumentList += "--no-build" }
 	dotnet pack @argumentList
@@ -145,15 +145,15 @@ function Publish-NuGetPackage {
 function Publish-PSGalleryModule {
 	$root = Join-Path $PSScriptRoot .. -Resolve
 
-	$output = "$root/var/PSModule"
+	$output = "$root/Temp/PSModule"
 	New-Item $output/src -ItemType Directory | Out-Null
 	Copy-Item $root/UI.psd1 $output/Belin.UI.psd1
 	Copy-Item $root/*.md $output
 	Copy-Item $root/src/Console $output/src -Recurse
 
-	$output = "$root/var/PSGallery"
+	$output = "$root/Temp/PSGallery"
 	New-Item $output -ItemType Directory | Out-Null
-	Compress-PSResource $root/var/PSModule $output
+	Compress-PSResource $root/Temp/PSModule $output
 	foreach ($package in Get-Item $output/*.nupkg) { Publish-PSResource -ApiKey $Env:PSGALLERY_API_KEY -NupkgPath $package -Repository PSGallery }
 }
 
