@@ -146,10 +146,10 @@ function Publish-PSGalleryModule {
 	$root = Join-Path $PSScriptRoot .. -Resolve
 
 	$output = "$root/Temp/PSModule"
-	New-Item $output/src -ItemType Directory | Out-Null
+	New-Item $output/Sources -ItemType Directory | Out-Null
 	Copy-Item $root/UI.psd1 $output/Belin.UI.psd1
 	Copy-Item $root/*.md $output
-	Copy-Item $root/src/Console $output/src -Recurse
+	Copy-Item $root/Sources/Console $output/Sources -Recurse
 
 	$output = "$root/Temp/PSGallery"
 	New-Item $output -ItemType Directory | Out-Null
